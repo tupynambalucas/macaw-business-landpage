@@ -1,0 +1,410 @@
+/* Fontes */
+.calibri-bold{
+    font-family: calibri,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.calibri-bold-italic{
+    font-family: calibri,sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+.calibri-italic{
+    font-family: calibri,sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.calibri-light{
+    font-family: calibri,sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.calibri-light-italic{
+    font-family: calibri,sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+.calibri-regular{
+    font-family: calibri,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Lora */
+.lora-italic{
+    font-family: lora,serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.lora-bold-italic{
+    font-family: lora,serif;
+    font-weight: 700;
+    font-style: italic;
+}
+.lora-bold{
+    font-family: lora,serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.lora-regular{
+    font-family: lora,serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Montserrat */
+.montserrat-semi-bold{
+    font-family: montserrat,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.montserrat-regular{
+    font-family: montserrat,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.contato{
+    position: fixed;
+    height: 5vh;
+    width: 5vh;
+    bottom: 5vh;
+    left: 5vh;
+    border-radius: 50%;
+    background: red;
+    z-index: 100;
+}
+/* CSS */
+*{
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+*:focus {
+    outline: none;
+    border: none;
+}
+*{
+    outline: none;
+    border: none;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    background: #f1f1f1;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #003dd9;
+    z-index: 1000;
+}
+.navbar-logo{
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    height: 5vh;
+}
+
+.section-1{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #f1f1f1;
+}
+.container {
+    min-height: 100%;
+    z-index: 5;
+}
+
+.center {
+	top: 50vh; left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+.apple {
+	
+	/* Text Background Effect */
+	
+	background: url('img/background.png');
+	-webkit-background-clip: text;
+	color: transparent;
+
+	/* Other */
+	
+	font-family: 'Roboto', sans-serif;
+	font-size: 11vh;
+	font-weight: 900;
+	animation: slice 3s, dynamic 7s infinite alternate ease-in-out;
+	white-space: nowrap;
+	
+}
+
+/* Slice Animation */
+
+@keyframes slice {
+	
+	0% {	line-height: 0%; }
+	
+	100% {	line-height: 100%; }
+	
+}
+
+/* Dynamic Background Animation */
+
+@keyframes dynamic {
+	
+	0% {	background-position: 0% }
+	
+	100% {	background-position: 100%; }
+	
+}
+#mouse-scroll {
+    style: block;
+    z-index: 6;
+  }
+  #mouse-scroll {
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    bottom: 5vh;
+    -webkit-transform: translateX(-50%);
+    z-index: 9999;
+  }
+  #mouse-scroll span{
+    display: block;
+    width: 5px; 
+    height: 5px;
+    -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+         transform: rotate(45deg);
+         transform: rotate(45deg);
+    border-right: 2px solid #003dd9; 
+    border-bottom: 2px solid #003dd9;
+    margin: 0 0 3px 5px;
+  }
+  #mouse-scroll .mouse {
+    height: 21px;
+    width: 14px;
+    border-radius: 10px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    border: 2px solid #003dd9;
+    top: 170px;
+  }
+  #mouse-scroll .down-arrow-1 {
+    margin-top: 6px;
+  }
+  #mouse-scroll .down-arrow-1, #mouse-scroll .down-arrow-2, #mouse-scroll .down-arrow-3 {
+    -webkit-animation: mouse-scroll 1s infinite; 
+      -moz-animation: mouse-scroll 1s infinite;
+  }
+  #mouse-croll .down-arrow-1 {
+     -webkit-animation-delay: .1s; 
+     -moz-animation-delay: .1s;
+     -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .down-arrow-2 {
+    -webkit-animation-delay: .2s; 
+    -moz-animation-delay: .2s;
+    -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .down-arrow-3 {
+     -webkit-animation-delay: .3s;
+     -moz-animation-dekay: .3s;
+     -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .mouse-in {
+    height: 5px;
+    width: 2px;
+    display: block; 
+    margin: 5px auto;
+    background: #003dd9;
+    position: relative;
+  }
+  #mouse-scroll .mouse-in {
+   -webkit-animation: animated-mouse 1.2s ease infinite;
+    moz-animation: mouse-animated 1.2s ease infinite;
+  }
+  
+  @-webkit-keyframes animated-mouse {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+       opacity: 0;
+      -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+  }
+  @-webkit-keyframes mouse-scroll {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    } 
+  }
+  @keyframes mouse-scroll {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+.section-2{
+    position: relative;
+    height: 180vh;
+    width: 100vw;
+    background: #020926;
+    text-align: center;
+}
+canvas { 
+    position: absolute;
+    display: block;
+    z-index: 10;
+    top: 130vh;
+}
+.who-is-macaw{
+    position: absolute;
+    top: 20vh;
+    width: 30vw;
+    z-index: 30;
+    left: 15vw;
+}
+
+.who-is-macaw p{
+    position: relative;
+    color: #f1f1f1;
+    text-align: left;
+    font-size: 3vh;
+}
+.who-is-macaw-botao{
+    position: relative;
+    margin-top: 7vh;
+    background: #003dd9;
+    left: 0;
+    width: 13vw;
+    height: 4.5vh;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 125px -24px rgba(0,0,0,0.99);
+    -moz-box-shadow: 0px 0px 125px -24px rgba(0,0,0,0.99);
+    box-shadow: 0px 0px 125px -24px rgba(0,0,0,0.99);    
+}
+.who-is-macaw-botao:hover{
+    background: #195BFF;
+    transition: 1s ease all;
+}
+.who-is-macaw-botao p{
+    position: relative;
+    font-size: 1.5vh;
+    top: 1vh;
+    opacity: 1;
+    color: #f1f1f1;
+    text-align: center;
+}
+/* Why does macaw exist */
+.why-does-macaw-exist{
+    position: absolute;
+    bottom: 20vh;
+    width: 30vw;
+    z-index: 30;
+    right: 15vw;
+}
+.why-does-macaw-exist p{
+    position: relative;
+    color: #f1f1f1;
+    text-align: left;
+    font-size: 3vh;
+}
+.why-does-macaw-exist-botao{
+    position: relative;
+    margin-top: 7vh;
+    background: #003dd9;
+    left: 0;
+    width: 13vw;
+    height: 4.5vh;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 125px -24px rgba(0,0,0,0.99);
+    -moz-box-shadow: 0px 0px 125px -24px rgba(0,0,0,0.99);
+    box-shadow: 0px 0px 125px -24px rgba(0,0,0,0.99);    
+}
+.why-does-macaw-exist-botao:hover{
+    background: #195BFF;
+    transition: 1s ease all;
+}
+.why-does-macaw-exist-botao p{
+    position: relative;
+    font-size: 1.5vh;
+    top: 1vh;
+    opacity: 1;
+    color: #f1f1f1;
+    text-align: center;
+}
+.sec2-background{
+    position: absolute;
+    height: 180vh;
+    width: 100vw;
+    top: 0;
+    background: #020926;
+    opacity: 0.2;
+}
+
+.section-3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #f1f1f1;
+}
+.sec3-title{
+    position: absolute;
+    bottom: 1vh;
+    text-align: center;
+    color: #f1f1f1;
+    height: 5vh;
+}
+.section-3 p{
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vh;
+    text-align: center;
+    margin-bottom: 5vh;
+    color: #020926;
+}
+.services{
+    position: absolute;
+    top: 25vh;
+    left: 10vw;
+}
+.services h1{
+    text-align: left;
+    color: #D9D9D9;
+    margin: 4vh;
+    font-size: 6vh;
+    transition-duration: 2s;
+}
+
+.services h1:hover{
+    color: #003dd9;
+    cursor: pointer;
+}
