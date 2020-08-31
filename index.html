@@ -44,9 +44,17 @@
     <script src="/lb/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
-  <div class="contato"></div>
+  <div class="contato">
+    <div class="contato-forma">
+      <i class="far fa-paper-plane"></i>
+    </div>
+    <span class="calibri-regular">Contact Us</span>
+  </div>
   <div class="navbar">
     <img class="navbar-logo" src="img/macaw.svg" alt="">
+    <div class="navbar-noticias">
+      <i class="far fa-newspaper navbar-noticias-icon"></i><span class="calibri-regular">News</span>
+    </div>
   </div>
   <div class="section-1">
     <div class="container">
@@ -69,43 +77,57 @@
   </div>
   <!-- Sec2 -->
   <div id="sec2" class="section-2">
-    <div class="who-is-macaw" data-aos="fade-right" data-aos-duration="2000">
+    <div class="who-is-macaw" data-aos="fade-left" data-aos-duration="2000">
       <p class="calibri-bold">Founded by two brazilians with the purpose of integrating businesses in a whole new level of efficiency, <span style="color: #003dd9;">MACAW</span> counts with a global team of highly qualified professionals to provide the best taylor made and win-win solutions for your business.</p>
       <div class="who-is-macaw-botao">
         <p class="calibri-regular">Get to know us</p>
       </div>
     </div>
-    <div class="why-does-macaw-exist" data-aos="fade-left" data-aos-duration="2000">
+    <img class="logo-sec2" src="img/logo.svg" alt="Logo Sec2" data-aos="fade-up" data-aos-duration="2000">
+    <div class="sec2-background"></div>
+  </div>
+  <div class="section-2-part-2">
+    <div class="why-does-macaw-exist" data-aos="fade-right" data-aos-duration="2000">
       <p class="calibri-bold">We were born with a clear mindset: to create bridges between businesses and solutions. To decipher complexity in the business’ world and allow you to navigate it with clarity rather than chaos. Bring us your challenges: the outcome is on us.</p>
       <div class="why-does-macaw-exist-botao">
         <p class="calibri-regular">Read Full Manifesto</p>
       </div>
     </div>
-    <canvas></canvas>
-    <div class="sec2-background"></div>
+    <div id="ancora" class="ancora-modelo"></div>
+    <img class="modelo" src="img/modelo.png" alt="" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor="#ancora">
   </div>
   <div class="section-3">
     <p class="calibri-regular">Our goal is to solve the problems that are keeping your business from thriving.<br/>
       We do that by mastering different tools:</p>
     <div class="services">
-      <h1 class="calibri-bold">BUSINESSES INTERMEDIATION</h1>
-      <h1 class="calibri-bold">GLOBAL INTEGRATION & INVESTMENT</h1>
-      <h1 class="calibri-bold">LEGAL ISSUES</h1>
-      <h1 class="calibri-bold">TAYLOR MADE SOLUTIONS</h1>
+      <h1 class="calibri-bold" data-aos="fade-right" data-aos-duration="1500">BUSINESSES INTERMEDIATION</h1>
+      <h1 class="calibri-bold" data-aos="fade-right" data-aos-duration="1500">GLOBAL INTEGRATION & INVESTMENT</h1>
+      <h1 class="calibri-bold" data-aos="fade-right" data-aos-duration="1500">LEGAL ISSUES</h1>
+      <h1 class="calibri-bold"data-aos="fade-right" data-aos-duration="1500">TAYLOR MADE SOLUTIONS</h1>
     </div>
   </div>
+  <section class="section-4">
+    <h1 class="calibri-bold">Our experiences have proven that the best problem solving tool in the market is the hability of connecting dots in adverse scenarios. We do that by approaching problems like if their are our own: acting fast, with assertiveness. There are no ready-to-go recipes, but we do have all the ingredients.</h1>
+    <div id="particles-js"></div>
+    <canvas id="logo-3d"></canvas>
+    <div class="sec4-background"></div>
+  </section>
   <script src="teste.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>  
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="lb/particles.js"></script>
+  <script src="lb/app.js"></script>
   <script>
+    var logocanvas = document.getElementById("logo-3d")
+
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
     camera.position.z = 5;
     camera.position.x = 0;
     camera.position.y = 0;
 
-    var renderer = new THREE.WebGLRenderer({antialias: true,alpha: true});
+    var renderer = new THREE.WebGLRenderer({antialias: true,alpha: true,canvas: logocanvas});
     renderer.setSize(window.innerWidth,window.innerHeight);
 
     document.body.appendChild(renderer.domElement);
@@ -122,9 +144,10 @@
 
     var loader = new THREE.ObjectLoader();
     loader.load( "img/logo.json", function (logo) {
-      logo.position.x = -0.05;
+      logo.position.x = -2.5;
       logo.position.y = -0.6;
-      logo.position.z = 3;
+      logo.position.z = 2;
+      logo.wireframe = true;
       scene.add(logo);
       logoCarregada = logo;
     } );
@@ -134,10 +157,19 @@
 
 
 
+    var spotLight = new THREE.SpotLight( 0xffffff );
+    spotLight.position.set( 20, 20, 100 );
 
-    var light = new THREE.PointLight(0x003dd9, 1, 1000)
-    light.position.set(0,0,15);
-    scene.add(light);
+    spotLight.castShadow = true;
+
+    spotLight.shadow.mapSize.width = 1024;
+    spotLight.shadow.mapSize.height = 1024;
+
+    spotLight.shadow.camera.near = 500;
+    spotLight.shadow.camera.far = 4000;
+    spotLight.shadow.camera.fov = 30;
+
+    scene.add( spotLight );
 
 
     var render = function() {
